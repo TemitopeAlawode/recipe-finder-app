@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  /* background-color: #000; */
+  /* background-image: url("../src/assets/images/bg-cook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
