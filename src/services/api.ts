@@ -66,7 +66,7 @@ export const searchMealsByIngredient = async (searchedRecipe: string) => {
             console.log(`HTTP Error , ${response.status}`);  
         }
         const data = await response.json();
-        return data.meals;
+        return data.meals || [];
     } catch (error) {
         console.log("Error searching meals by ingredient: ",error);
     }
@@ -89,15 +89,17 @@ export const generateRandomRecipe = async () => {
 }
 
 // Get Meal Details by id
-export const getMealDetailsById = async (mealId: string) => {
+export const getMealDetailsById = async (idMeal: string | undefined) => {
     try {
-        const response = await fetch(`${BASE_API_URL}/lookup.php?i=${mealId}`);
+        const response = await fetch(`${BASE_API_URL}/lookup.php?i=${idMeal}`);
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`);
             }
             const data = await response.json();
-            return data.meal;
+            return data.meals;
             } catch (error) {
                 console.log("Error Fetching Meal Details: ", error);
                 }
 }
+
+

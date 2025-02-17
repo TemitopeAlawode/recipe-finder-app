@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 // import honey_garlic from "../assets/images/Honey-garlic-chicken-meal.jpg";
 interface MealInterface {
+  idMeal: string;
   strMealThumb: string;
   strMeal: string;
 }
@@ -10,6 +13,7 @@ interface RecipeCardInterface {
 
 const RecipeCard = ({ meal }: RecipeCardInterface) => {
   return (
+    <Link to={`/recipes/${meal.idMeal}`}>
     <div className="p-4 w-96 shadow-md rounded-2xl bg-slate-50 flex flex-col items-center justify-center cursor-pointer">
       {/* Display Meal Card */}
 
@@ -23,6 +27,7 @@ const RecipeCard = ({ meal }: RecipeCardInterface) => {
       <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-2xl w-64" />
       <h3 className="text-md pt-4 font-bold text-center">{meal.strMeal}</h3>
     </div>
+    </Link>
   )
 }
 
