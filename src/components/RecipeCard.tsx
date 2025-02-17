@@ -1,5 +1,14 @@
 // import honey_garlic from "../assets/images/Honey-garlic-chicken-meal.jpg";
-const RecipeCard = ({ meal }) => {
+interface   MealInterface {
+  strMealThumb: string; 
+  strMeal: string; 
+}
+
+interface RecipeCardInterface {
+  meal: MealInterface;
+}
+
+const RecipeCard = ({ meal }: RecipeCardInterface) => {
   return (
     <div className="p-4 w-96 shadow-md rounded-2xl bg-slate-50 flex flex-col items-center justify-center cursor-pointer">
       {/* Display Meal Card */}

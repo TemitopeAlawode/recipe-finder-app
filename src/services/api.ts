@@ -87,3 +87,17 @@ export const generateRandomRecipe = async () => {
         console.log("Error Fetching Recipe: ", error);
     }
 }
+
+// Get Meal Details by id
+export const getMealDetailsById = async (mealId: string) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/lookup.php?i=${mealId}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.meal;
+            } catch (error) {
+                console.log("Error Fetching Meal Details: ", error);
+                }
+}

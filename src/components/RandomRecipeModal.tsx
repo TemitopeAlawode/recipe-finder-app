@@ -1,4 +1,15 @@
-const RandomRecipeModal = ({ randomRecipe, onCloseModal }) => {
+interface Meals {
+  strMealThumb: string; 
+  strMeal: string; 
+  strInstructions: string; 
+}
+
+interface RandomRecipeModalInterface {
+  randomRecipe: Meals;
+  onCloseModal: () => void;
+}
+
+const RandomRecipeModal = ({ randomRecipe, onCloseModal }: RandomRecipeModalInterface) => {
   return (
     <div>
       {/* Content */}
