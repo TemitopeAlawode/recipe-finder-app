@@ -14,7 +14,7 @@ interface RecipeCardInterface {
 const RecipeCard = ({ meal }: RecipeCardInterface) => {
   return (
     <Link to={`/recipes/${meal.idMeal}`}>
-    <div className="p-4 w-96 shadow-md rounded-2xl bg-slate-50 flex flex-col items-center justify-center cursor-pointer">
+    <div className="p-4 w-full sm:w-64 md:w-72 shadow-md rounded-2xl bg-slate-50 flex flex-col items-center justify-center cursor-pointer">
       {/* Display Meal Card */}
 
       {/* <img src={honey_garlic} alt="Honey Garlic Chicken Meal" className="w-40" />
