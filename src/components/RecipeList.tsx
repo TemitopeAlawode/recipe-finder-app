@@ -1,7 +1,7 @@
-interface   MealInterface {
+interface MealInterface {
   idMeal: string;
-  strMealThumb: string; 
-  strMeal: string; 
+  strMealThumb: string;
+  strMeal: string;
 }
 
 interface RecipeListInterface {

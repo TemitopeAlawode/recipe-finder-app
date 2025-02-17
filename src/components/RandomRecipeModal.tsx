@@ -1,7 +1,7 @@
 interface Meals {
-  strMealThumb: string; 
-  strMeal: string; 
-  strInstructions: string; 
+  strMealThumb: string;
+  strMeal: string;
+  strInstructions: string;
 }
 
 interface RandomRecipeModalInterface {

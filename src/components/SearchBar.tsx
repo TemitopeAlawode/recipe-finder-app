@@ -1,22 +1,25 @@
 import { useState } from "react"
 
-// interface SearchBarProps{
-//   searchedRecipe: string, 
-//   searchType: string
-// }
-const SearchBar = ({ onSearch }) => {
+interface SearchBarProps {
+  onSearch: (searchedRecipe: string, searchType: string) => void;
+}
+const SearchBar = ({ onSearch }: SearchBarProps) => {
   // States for the search input and type
   const [searchedRecipe, setSearchedRecipe] = useState("");
-  const [searchType, setSearchType] = useState();
+  const [searchType, setSearchType] = useState("");
 
   // For when the form is submitted
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    if (searchedRecipe.trim === "") {
+    const trimmedRecipe = searchedRecipe.trim();
+    if (trimmedRecipe === "" || searchType === "Search recipe by") {
       return;
     }
-    onSearch(searchedRecipe, searchType)
+    onSearch(trimmedRecipe, searchType)
   };
+
+
+
   return (
     <div className="flex flex-col justify-center items-center m-5" id="search-recipes">
       <h1 className="text-2xl font-semibold text-yellow-600 italic p-2">Explore various recipes...</h1>
